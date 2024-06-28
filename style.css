@@ -45,22 +45,22 @@ body {
     border-radius: 8px;
     color: white;
     width: max-content;
-    font-family: 'Georgia', serif; /* Example of a serif font */
+    font-family: 'Georgia', serif; 
     font-size: 1.8rem;
     font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding text shadow */
-    opacity: 0; /* Initially hidden */
-    animation: fadeInScale 1s ease forwards; /* Animation for fade-in and scale effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    animation: fadeInScale 1s ease forwards; 
 }
 
 @keyframes fadeInScale {
     0% {
         opacity: 0;
-        transform: scale(0.8); /* Start small */
+        transform: scale(0.8); 
     }
     100% {
         opacity: 1;
-        transform: scale(1); /* Scale up to full size */
+        transform: scale(1); 
     }
 }
 
