@@ -1,4 +1,4 @@
-DigiClock2   displays live dual clocks for Indian Standard Time (IST) and Central Standard Time (CST)
+DigiClock2  displaying five digital clocks in different time zones (IST, CST, PST, MST, EST)  
 
 Stack Used : HTML, CSS, and JavaScript.
 
