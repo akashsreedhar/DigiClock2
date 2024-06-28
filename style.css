@@ -6,24 +6,65 @@ body {
 
 .dclock {
     text-align: center;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.dclock:hover {
+    transform: scale(1.1);
 }
 
 .dclock h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: white;
 }
 
 .dclock h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: white;
 }
 
 .dclock h1 {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: bold;
     color: white;
+}
+
+.motivation-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    width: max-content;
+    font-family: 'Georgia', serif; /* Example of a serif font */
+    font-size: 1.8rem;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding text shadow */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInScale 1s ease forwards; /* Animation for fade-in and scale effect */
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Start small */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Scale up to full size */
+    }
+}
+
+.motivation-text {
+    font-weight: bold;
+    margin-bottom: 0;
 }

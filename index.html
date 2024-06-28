@@ -10,35 +10,49 @@
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR3v2BvQ6ZyMk-s2mAd_rxUtv5yaWGU3Xveg&s">
 </head>
 <body>
-    <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
-        <div class="row w-100">
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="dclock text-center" id="clock-ist"></div>
-            </div>
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="dclock text-center" id="clock-cst"></div>
-            </div>
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center position-relative">
+        <div class="dclock text-center position-absolute" id="clock-ist" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+        <div class="dclock text-center position-absolute" id="clock-cst" style="top: 10%; right: 5%;"></div>
+        <div class="dclock text-center position-absolute" id="clock-pst" style="top: 10%; left: 5%;"></div>
+        <div class="dclock text-center position-absolute" id="clock-mst" style="bottom: 10%; left: 5%;"></div>
+        <div class="dclock text-center position-absolute" id="clock-est" style="bottom: 10%; right: 5%;"></div>
+
+        <!-- Motivational Quote Container -->
+        <div class="motivation-container text-center position-fixed bottom-0 start-50 translate-middle-x">
+           <i> <p class="motivation-text">" Raiders, your next client is just around the corner . let's hunt! "</p></i>
         </div>
     </div>
+
+    <script>
+        function displayTime() {
+            const currentTime = new Date();
+
+            const optionsIST = { timeZone: 'Asia/Kolkata', hour12: true };
+            const optionsCST = { timeZone: 'America/Chicago', hour12: true };
+            const optionsPST = { timeZone: 'America/Los_Angeles', hour12: true };
+            const optionsMST = { timeZone: 'America/Denver', hour12: true };
+            const optionsEST = { timeZone: 'America/New_York', hour12: true };
+
+            const dateIST = currentTime.toLocaleDateString('en-GB', optionsIST);
+            const timeIST = currentTime.toLocaleTimeString('en-GB', optionsIST);
+            const dateCST = currentTime.toLocaleDateString('en-US', optionsCST);
+            const timeCST = currentTime.toLocaleTimeString('en-US', optionsCST);
+            const datePST = currentTime.toLocaleDateString('en-US', optionsPST);
+            const timePST = currentTime.toLocaleTimeString('en-US', optionsPST);
+            const dateMST = currentTime.toLocaleDateString('en-US', optionsMST);
+            const timeMST = currentTime.toLocaleTimeString('en-US', optionsMST);
+            const dateEST = currentTime.toLocaleDateString('en-US', optionsEST);
+            const timeEST = currentTime.toLocaleTimeString('en-US', optionsEST);
+
+            document.getElementById('clock-ist').innerHTML = `<h2>IST</h2><h3>${dateIST}</h3><h1>${timeIST}</h1>`;
+            document.getElementById('clock-cst').innerHTML = `<h2>CST</h2><h3>${dateCST}</h3><h1>${timeCST}</h1>`;
+            document.getElementById('clock-pst').innerHTML = `<h2>PST</h2><h3>${datePST}</h3><h1>${timePST}</h1>`;
+            document.getElementById('clock-mst').innerHTML = `<h2>MST</h2><h3>${dateMST}</h3><h1>${timeMST}</h1>`;
+            document.getElementById('clock-est').innerHTML = `<h2>EST</h2><h3>${dateEST}</h3><h1>${timeEST}</h1>`;
+        }
+
+        setInterval(displayTime, 1000);
+        displayTime(); // Calling immediately to avoid initial delay
+    </script>
 </body>
-<script>
-function displayTime() {
-    const currentTime = new Date();
-
-    const optionsIST = { timeZone: 'Asia/Kolkata', hour12: true };
-    const optionsCST = { timeZone: 'America/Chicago', hour12: true };
-
-    const dateIST = currentTime.toLocaleDateString('en-GB', optionsIST);
-    const timeIST = currentTime.toLocaleTimeString('en-GB', optionsIST);
-    const dateCST = currentTime.toLocaleDateString('en-US', optionsCST);
-    const timeCST = currentTime.toLocaleTimeString('en-US', optionsCST);
-
-    document.getElementById('clock-ist').innerHTML = `<h2>IST</h2><h3>${dateIST}</h3><h1>${timeIST}</h1>`;
-    document.getElementById('clock-cst').innerHTML = `<h2>CST</h3><h3>${dateCST}</h3><h1>${timeCST}</h1>`;
-}
-
-setInterval(displayTime, 1000);
-displayTime(); // Calling  immediately to avoid initial delay
-</script>
 </html>
-\
